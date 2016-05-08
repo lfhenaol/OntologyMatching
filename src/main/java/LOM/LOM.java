@@ -6,6 +6,8 @@ import Ontology.Ontology;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
 
+import java.util.Map;
+
 /**
  * Created by Lucho on 18/04/2016.
  */
@@ -27,7 +29,7 @@ public class LOM extends Ontology {
         super.setGraph(uriGraph);
     }
 
-    public OntModel match(){
+    public Map match(){
        return this.general.match(this);
     }
 

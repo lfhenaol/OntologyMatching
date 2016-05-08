@@ -5,11 +5,17 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.*;
 import static spark.Spark.*;
 import LOM.LOM;
+import org.apache.jena.rdf.model.NodeIterator;
+import org.apache.jena.util.iterator.ExtendedIterator;
 import org.apache.log4j.BasicConfigurator;
+import org.json.JSONObject;
 import similarityMeasures.SimilarityMeasures;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -65,7 +71,8 @@ public class Main {
 //        lom.match();
 //        save(lom.getLom());
         //return lom.getTechnical().getRequirement().getOrComposite().getName().toString();
-        OntModel test = lom.match();
+        Map response = lom.match();
+        OntModel test = (OntModel) response.get("model") ;
         FileWriter out = null;
         try {
             // XML format - long and verbose
@@ -82,7 +89,13 @@ public class Main {
                 try {out.close();} catch (IOException ignore) {}
             }
         }
-        return "";
+
+        JSONObject Json = new JSONObject();
+        Map<String,String> t = new HashMap<>();
+        t.put("test","holy Fuck");
+        Json.put("lom",t);
+
+        return response.get("jsonObject").toString();
     }
 
     public static String save(OntModel lom){

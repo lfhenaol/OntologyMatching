@@ -3,14 +3,13 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-catalog">
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#catalog"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#entry"/>
+  <owl:ObjectProperty rdf:about="http://www.example.com/No-Matches"/>
+  <owl:SymmetricProperty rdf:about="http://www.example.com/undefined">
+    <owl:equivalentProperty rdf:resource="http://www.example.com/undefined"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
   <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-entry">
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#entry"/>
+    <owl:equivalentProperty rdf:resource="http://www.example.com/No-Matches"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </owl:SymmetricProperty>
 </rdf:RDF>

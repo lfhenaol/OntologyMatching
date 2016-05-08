@@ -7,6 +7,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Lucho on 18/04/2016.
@@ -35,9 +36,9 @@ public class General {
         this.identifier = new Identifier(jsonGeneral.getNode("identifier"));
     }
 
-    public OntModel match(Ontology onto) {
+    public Map match(Ontology onto) {
 
-        //return this.generalModel;
+
         return this.identifier.match(onto);
     }
 

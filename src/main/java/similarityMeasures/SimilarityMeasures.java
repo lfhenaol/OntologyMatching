@@ -74,7 +74,7 @@ public class SimilarityMeasures {
         //Punctuation elimination
         //s.replaceAll("[.]+","");
         Stopwords sw = new Stopwords();
-        sw.clear(); sw.add("has"); sw.add("is");
+        sw.clear(); sw.add("has"); sw.add("is"); sw.add("in"); sw.add("its");
         String strg = str.toLowerCase()
                 .trim()
                 .replace("-"," ")

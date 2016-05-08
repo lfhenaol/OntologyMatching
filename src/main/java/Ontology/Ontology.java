@@ -1,6 +1,7 @@
 package Ontology;
 
 import org.apache.jena.arq.querybuilder.SelectBuilder;
+import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
@@ -37,33 +38,49 @@ public class Ontology {
         ResultSet select = execQProperty.execSelect();
         float measure = 0;
         Resource val = null;
+        Map<Object, Object> result = new HashMap<>();
         SimilarityMeasures sm = new SimilarityMeasures();
-        while (select.hasNext()){
-            QuerySolution querySol = select.next();
-            Resource resourceQuery = querySol.getResource("?a");
-            float aux = sm.similarText(resourceQuery.getLocalName(),localProperty.getLocalName());
-            if(aux > measure){
-                measure = aux;
-                val = resourceQuery;
+        if(select.hasNext()) {
+            while (select.hasNext()) {
+                QuerySolution querySol = select.next();
+                Resource resourceQuery = querySol.getResource("?a");
+                float aux = sm.similarText(resourceQuery.getLocalName(), localProperty.getLocalName());
+                if (aux > measure) {
+                    measure = aux;
+                    val = resourceQuery;
+                }
+
             }
 
+            result.put("measure",measure);
+            result.put("resource",val);
+        } else {
+            measure = 0;
+            String noMatch = "No matches";
+            result.put("measure",measure);
+            result.put("resource",noMatch);
         }
         execQProperty.close();
-        Map<Object, Object> result = new HashMap<>();
-        result.put("measure",measure);
-        result.put("resource",val);
+
         return result;
     }
 
     public Resource getSimilarity(Resource localProperty){
-        Map qpDataProp = this.queryProperty(OWL.DatatypeProperty,localProperty);
-        Map qpObjectProp = this.queryProperty(OWL.ObjectProperty, localProperty);
-        float measureDataProp = (float) qpDataProp.get("measure");
-        float measureObjectProp = (float) qpObjectProp.get("measure");
-        if(measureObjectProp >= measureDataProp){
-            return (Resource) qpObjectProp.get("resource");
+        if (!localProperty.getLocalName().equals("undefined")) {
+            Map qpDataProp = this.queryProperty(OWL.DatatypeProperty, localProperty);
+            Map qpObjectProp = this.queryProperty(OWL.ObjectProperty, localProperty);
+            float measureDataProp = (float) qpDataProp.get("measure");
+            float measureObjectProp = (float) qpObjectProp.get("measure");
+            if ((measureObjectProp >= measureDataProp) && (measureDataProp != 0)) {
+                return (Resource) qpObjectProp.get("resource");
+            }else if(measureDataProp > measureObjectProp ) {
+                return (Resource) qpDataProp.get("resource");
+            }
+            OntModel resp = ModelFactory.createOntologyModel();
+            return resp.createResource("http://www.example.com/No-Matches");
+        } else{
+            return localProperty;
         }
-        return (Resource) qpDataProp.get("resource");
     }
 
     public String getName() {
