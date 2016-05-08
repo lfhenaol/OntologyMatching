@@ -1,0 +1,18 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-catalog>
+        a                       owl:ObjectProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#catalog> .
+
+<http://slor.sourceforge.net/ontology/lom.owl#entry>
+        a       owl:ObjectProperty .
+
+<http://slor.sourceforge.net/ontology/lom.owl#catalog>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-entry>
+        a                       owl:SymmetricProperty , owl:ObjectProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#entry> .
