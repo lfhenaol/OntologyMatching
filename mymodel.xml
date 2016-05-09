@@ -3,13 +3,39 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:ObjectProperty rdf:about="http://www.example.com/No-Matches"/>
-  <owl:SymmetricProperty rdf:about="http://www.example.com/undefined">
-    <owl:equivalentProperty rdf:resource="http://www.example.com/undefined"/>
+  <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description"/>
+  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#aggregationLevel"/>
+  <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#coverage"/>
+  <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title"/>
+  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#structure"/>
+  <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#language"/>
+  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#keyword"/>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#description">
+    <owl:equivalentProperty rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </owl:SymmetricProperty>
-  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-entry">
-    <owl:equivalentProperty rdf:resource="http://www.example.com/No-Matches"/>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-keyword">
+    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#keyword"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-language">
+    <owl:equivalentProperty rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#language"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-structure">
+    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#structure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-aggregationLevel">
+    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#aggregationLevel"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-coverage">
+    <owl:equivalentProperty rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#coverage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://purl.org/dc/terms/title">
+    <owl:equivalentProperty rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </owl:SymmetricProperty>
 </rdf:RDF>

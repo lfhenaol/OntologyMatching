@@ -5,7 +5,10 @@ import argo.jdom.JsonNode;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.vocabulary.OWL;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,23 +28,62 @@ public class General {
 
     public General(JsonNode jsonGeneral){
         this.generalModel = ModelFactory.createOntologyModel();
-        this.title = this.generalModel.createResource(jsonGeneral.getNode("title").getText());
-        this.language = this.generalModel.createResource(jsonGeneral.getNode("language").getText());
-        this.description = this.generalModel.createResource(jsonGeneral.getNode("description").getText());
-        this.keyword = this.generalModel.createResource(jsonGeneral.getNode("keyword").getText());
-        this.coverage = this.generalModel.createResource(jsonGeneral.getNode("coverage").getText());
-        this.structure = this.generalModel.createResource(jsonGeneral.getNode("structure").getText());
-        this.aggregationLevel = this.generalModel.createResource(jsonGeneral.getNode("aggregationLevel").getText());
+        this.title = this.undefinedToResource(jsonGeneral.getNode("title").getText());
+        this.language = this.undefinedToResource(jsonGeneral.getNode("language").getText());
+        this.description = this.undefinedToResource(jsonGeneral.getNode("description").getText());
+        this.keyword = this.undefinedToResource(jsonGeneral.getNode("keyword").getText());
+        this.coverage = this.undefinedToResource(jsonGeneral.getNode("coverage").getText());
+        this.structure = this.undefinedToResource(jsonGeneral.getNode("structure").getText());
+        this.aggregationLevel = this.undefinedToResource(jsonGeneral.getNode("aggregationLevel").getText());
 
         this.identifier = new Identifier(jsonGeneral.getNode("identifier"));
     }
 
     public Map match(Ontology onto) {
+        ArrayList<Resource> localProp = new ArrayList<>();
+        localProp.add(this.title);
+        localProp.add(this.language);
+        localProp.add(this.description);
+        localProp.add(this.keyword);
+        localProp.add(this.coverage);
+        localProp.add(this.structure);
+        localProp.add(this.aggregationLevel);
+        ArrayList<String> jresponse = new ArrayList<>();
+        jresponse.add("title");
+        jresponse.add("language");
+        jresponse.add("description");
+        jresponse.add("keyword");
+        jresponse.add("coverage");
+        jresponse.add("structure");
+        jresponse.add("aggregationLevel");
+        String json = "{\n";
+        Map similar = onto.getSimilarity(localProp);
+        for (int i = 0; i<localProp.size();i++) {
+            Resource rs = (Resource) similar.get(localProp.get(i));
+            Resource lc = localProp.get(i);
+            this.generalModel.createObjectProperty(rs.toString());
+            this.generalModel.createObjectProperty(lc.toString());
+            this.generalModel.createSymmetricProperty(lc.toString());
+            this.generalModel.add(lc, OWL.equivalentProperty, rs);
+            json = json + "\""+jresponse.get(i)+"\": \"" + ((lc.getLocalName().equals("undefined"))? "Unselected":((rs.getLocalName().equals("No-Matches"))? "No matches": rs.toString()))+"\"";
+            if(i < (localProp.size()-1)){
+                json = json + ",";
+            }
+        }
+        Map result = this.identifier.match(onto);
+        this.generalModel.union(this.identifier.getIdentifier());
+        json = json +",\"identifier\":" +result.get("jsonObject").toString() + "}";
 
-
-        return this.identifier.match(onto);
+        Map<String,Object> response = new HashMap<>();
+        response.put("model",this.generalModel);
+        response.put("jsonObject",json);
+        return response;
     }
 
+    private Resource undefinedToResource(String localProperty){
+        String uri = "http://www.example.com/undefined";
+        return (localProperty.equals("undefined"))? this.generalModel.createResource(uri) : this.generalModel.createResource(localProperty);
+    }
 
     public Identifier getIdentifier() {
         return identifier;

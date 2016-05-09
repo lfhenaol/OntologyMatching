@@ -11,6 +11,7 @@ import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
 import similarityMeasures.SimilarityMeasures;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,58 +30,87 @@ public class Ontology {
 
     }
 
-    public Map queryProperty(Resource typeProperty, Resource localProperty){
+    public Map queryProperty(Resource typeProperty, ArrayList<Resource> localProperty){
         SelectBuilder queryBuild = new SelectBuilder();
         queryBuild.addVar("*");
         queryBuild.addWhere("?a", RDF.type, typeProperty);
         Query query = queryBuild.build();
         QueryExecution execQProperty = QueryExecutionFactory.sparqlService(this.endPointURL, query, this.graph);
         ResultSet select = execQProperty.execSelect();
-        float measure = 0;
+
+        Map<Resource,Object> measure = new HashMap<>();
+        Map<Resource,Object> similar = new HashMap<>();
+        for (Resource aLocalProperty : localProperty) {
+            measure.put(aLocalProperty, (float) 0);
+            similar.put(aLocalProperty, "No matches");
+        }
+
         Resource val = null;
-        Map<Object, Object> result = new HashMap<>();
+        Map<Object, Map> result = new HashMap<>();
         SimilarityMeasures sm = new SimilarityMeasures();
         if(select.hasNext()) {
             while (select.hasNext()) {
                 QuerySolution querySol = select.next();
                 Resource resourceQuery = querySol.getResource("?a");
-                float aux = sm.similarText(resourceQuery.getLocalName(), localProperty.getLocalName());
-                if (aux > measure) {
-                    measure = aux;
-                    val = resourceQuery;
+                for (Resource aLocalProperty : localProperty) {
+                    float similarValue = sm.similarText(resourceQuery.getLocalName(), aLocalProperty.getLocalName());
+                    if (similarValue > ((float) measure.get(aLocalProperty))) {
+                        measure.put(aLocalProperty, similarValue);
+                        similar.put(aLocalProperty, resourceQuery);
+                    }
                 }
-
             }
 
             result.put("measure",measure);
-            result.put("resource",val);
+            result.put("resource",similar);
         } else {
-            measure = 0;
-            String noMatch = "No matches";
             result.put("measure",measure);
-            result.put("resource",noMatch);
+            result.put("resource",similar);
         }
         execQProperty.close();
 
         return result;
     }
 
-    public Resource getSimilarity(Resource localProperty){
-        if (!localProperty.getLocalName().equals("undefined")) {
-            Map qpDataProp = this.queryProperty(OWL.DatatypeProperty, localProperty);
-            Map qpObjectProp = this.queryProperty(OWL.ObjectProperty, localProperty);
-            float measureDataProp = (float) qpDataProp.get("measure");
-            float measureObjectProp = (float) qpObjectProp.get("measure");
-            if ((measureObjectProp >= measureDataProp) && (measureDataProp != 0)) {
-                return (Resource) qpObjectProp.get("resource");
-            }else if(measureDataProp > measureObjectProp ) {
-                return (Resource) qpDataProp.get("resource");
+    public Map getSimilarity(ArrayList<Resource> localProperty ){
+        Map<Resource,Resource> getSim = new HashMap<>();
+        OntModel resp = ModelFactory.createOntologyModel();
+        resp.createResource("http://www.example.com/No-Matches");
+
+        ArrayList<Resource> locProp = (ArrayList<Resource>) localProperty.clone();
+
+        for(int i=0; i < locProp.size(); i++) {
+            if (localProperty.get(i).getLocalName().equals("undefined")) {
+                getSim.put(locProp.get(i),locProp.get(i));
+                locProp.remove(i);
             }
-            OntModel resp = ModelFactory.createOntologyModel();
-            return resp.createResource("http://www.example.com/No-Matches");
-        } else{
-            return localProperty;
         }
+
+        Map qpDataProp = this.queryProperty(OWL.DatatypeProperty,locProp);
+        Map qpObjectProp = this.queryProperty(OWL.ObjectProperty,locProp);
+        for (int j=0;j < locProp.size();j++){
+            HashMap hmOP = (HashMap) qpObjectProp.get("measure");
+            HashMap hmDP = (HashMap) qpDataProp.get("measure");
+            if((((float)hmOP.get(locProp.get(j)))
+                    >= ((float)hmDP.get(locProp.get(j))))
+                    && (((float)hmDP.get(locProp.get(j)))
+                    != 0)) {
+
+                hmOP = (HashMap) qpObjectProp.get("resource");
+                getSim.put(locProp.get(j),(Resource) hmOP.get(locProp.get(j)));
+
+            } else if((((float)hmDP.get(locProp.get(j)))
+                    > ((float)hmOP.get(locProp.get(j))))){
+
+                hmDP = (HashMap) qpDataProp.get("resource");
+                getSim.put(locProp.get(j),(Resource) hmDP.get(locProp.get(j)));
+
+            } else{
+                getSim.put(locProp.get(j), (Resource) resp);
+            }
+        }
+
+        return getSim;
     }
 
     public String getName() {

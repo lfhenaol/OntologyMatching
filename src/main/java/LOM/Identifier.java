@@ -14,6 +14,7 @@ import org.apache.jena.vocabulary.RDF;
 import org.json.JSONObject;
 import similarityMeasures.SimilarityMeasures;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -41,25 +42,27 @@ public class Identifier {
         // Evaluar posible learning *
         //Luego de otener los resultados más cercanos, hacer el emparejamiento
         //gardar modelo en memoria
-
-        Resource entryExtern = onto.getSimilarity(this.entry);
-        Resource catalogExtern = onto.getSimilarity(this.catalog);
-
-        this.identifier.createObjectProperty(entryExtern.toString());
-        this.identifier.createObjectProperty(catalogExtern.toString());
-        this.identifier.createObjectProperty(this.entry.toString());
-        this.identifier.createObjectProperty(this.catalog.toString());
-
-        this.identifier.createSymmetricProperty(this.entry.toString());
-        this.identifier.createSymmetricProperty(this.catalog.toString());
-
-        this.identifier.add(this.entry,OWL.equivalentProperty,entryExtern);
-        this.identifier.add(this.catalog,OWL.equivalentProperty,catalogExtern);
-
-        JSONObject json = new JSONObject("{\n" +
-                "          \"catalog\": \"" +((this.catalog.getLocalName().equals("undefined"))?"Unselected":((catalogExtern.getLocalName().equals("No-Matches"))?"No matches":catalogExtern)) + "\",\n" +
-                "          \"entry\": \"" + ((this.entry.getLocalName().equals("undefined"))?"Unselected":((entryExtern.getLocalName().equals("No-Matches"))?"No matches":entryExtern)) + "\"\n" +
-                "        }");
+        ArrayList<Resource> localProp = new ArrayList<>();
+        localProp.add(this.entry);
+        localProp.add(this.catalog);
+        ArrayList<String> jresponse = new ArrayList<>();
+        jresponse.add("entry");
+        jresponse.add("catalog");
+        String json = "{\n";
+        Map similar = onto.getSimilarity(localProp);
+        for (int i = 0; i<localProp.size();i++) {
+            Resource rs = (Resource) similar.get(localProp.get(i));
+            Resource lc = localProp.get(i);
+            this.identifier.createObjectProperty(rs.toString());
+            this.identifier.createObjectProperty(lc.toString());
+            this.identifier.createSymmetricProperty(lc.toString());
+            this.identifier.add(lc, OWL.equivalentProperty, rs);
+            json = json + "\""+jresponse.get(i)+"\": \"" + ((lc.getLocalName().equals("undefined"))? "Unselected":((rs.getLocalName().equals("No-Matches"))? "No matches": rs.toString()))+"\"";
+            if(i < (localProp.size()-1)){
+                json = json + ",";
+            }
+        }
+        json = json + "}";
 
         Map<String,Object> response = new HashMap<>();
         response.put("model",this.identifier);
