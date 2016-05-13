@@ -2,24 +2,3 @@
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-
-<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#description>
-        a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description> .
-
-<http://slor.sourceforge.net/ontology/lom.owl#purpose>
-        a       owl:ObjectProperty .
-
-<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-purpose>
-        a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#purpose> .
-
-<http://slor.sourceforge.net/ontology/lom.owl#keyword>
-        a       owl:ObjectProperty .
-
-<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-keyword>
-        a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#keyword> .
-
-<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description>
-        a       owl:ObjectProperty .

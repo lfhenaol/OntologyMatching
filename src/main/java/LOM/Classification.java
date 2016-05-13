@@ -106,7 +106,7 @@ public class Classification {
         this.keyword = keyword;
     }
 
-    public OntModel getClassification() {
+    public OntModel getClassificationModel() {
         return classificationModel;
     }
 
