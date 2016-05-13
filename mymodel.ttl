@@ -2,3 +2,262 @@
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+rdfs:domain  a       rdfs:Resource , rdf:Property ;
+        rdfs:domain  rdf:Property ;
+        rdfs:range   rdfs:Class .
+
+<http://slor.sourceforge.net/ontology/lom.owl#size>
+        a       owl:ObjectProperty .
+
+<http://purl.org/dc/terms/format>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#format> .
+
+<http://slor.sourceforge.net/ontology/lom.owl#context>
+        a       owl:ObjectProperty .
+
+<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#language>
+        a       owl:ObjectProperty .
+
+<http://slor.sourceforge.net/ontology/lom.owl#purpose>
+        a       owl:ObjectProperty .
+
+<http://slor.sourceforge.net/ontology/lom.owl#installationRemarks>
+        a       owl:ObjectProperty .
+
+owl:ObjectProperty  a  rdfs:Resource , rdfs:Class .
+
+rdfs:comment  a     rdfs:Resource , rdf:Property ;
+        rdfs:range  rdfs:Literal .
+
+rdf:first  a                rdfs:Resource , rdf:Property ;
+        rdfs:domain         rdf:List ;
+        rdfs:subPropertyOf  rdf:first .
+
+rdf:object  a               rdfs:Resource , rdf:Property ;
+        rdfs:domain         rdf:Statement ;
+        rdfs:subPropertyOf  rdf:object .
+
+rdfs:subPropertyOf  a  rdfs:Resource , rdf:Property ;
+        rdfs:domain  rdf:Property ;
+        rdfs:range   rdf:Property .
+
+<http://slor.sourceforge.net/ontology/lom.owl#intendedEndUserRole>
+        a       owl:ObjectProperty .
+
+rdf:Alt  a               rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Container , rdf:Alt .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-difficulty>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#difficulty> .
+
+rdf:List  a              rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdf:List , rdfs:Resource .
+
+rdf:Statement  a         rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdf:Statement , rdfs:Resource .
+
+rdf:Seq  a               rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Container , rdf:Seq .
+
+owl:SymmetricProperty
+        a       rdfs:Resource , rdfs:Class .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-structure>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#structure> .
+
+rdfs:ContainerMembershipProperty
+        a                rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdf:Property , rdfs:Resource , rdfs:ContainerMembershipProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-otherplatformrequeriments>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#otherPlatformRequirements> .
+
+<http://slor.sourceforge.net/ontology/lom.owl#location>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#description>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description> .
+
+rdf:Property  a          rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdf:Property , rdfs:Resource .
+
+<http://purl.org/dc/terms/title>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title> .
+
+rdf:XMLLiteral  a  rdfs:Class , rdfs:Resource , rdfs:Datatype .
+
+rdf:nil  a      rdfs:Resource , rdf:List .
+
+rdfs:range  a        rdfs:Resource , rdf:Property ;
+        rdfs:domain  rdf:Property ;
+        rdfs:range   rdfs:Class .
+
+rdfs:isDefinedBy  a         rdfs:Resource , rdf:Property ;
+        rdfs:subPropertyOf  rdfs:seeAlso , rdfs:isDefinedBy .
+
+<http://slor.sourceforge.net/ontology/lom.owl#interactivityType>
+        a       owl:ObjectProperty .
+
+rdfs:Container  a        rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Container .
+
+<http://slor.sourceforge.net/ontology/lom.owl#semanticDensity>
+        a       owl:ObjectProperty .
+
+rdf:Bag  a               rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Container , rdf:Bag .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-learningResourceType>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#learningResourceType> .
+
+<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#format>
+        a       owl:ObjectProperty .
+
+<http://slor.sourceforge.net/ontology/lom.owl#difficulty>
+        a       owl:ObjectProperty .
+
+rdfs:label  a       rdfs:Resource , rdf:Property ;
+        rdfs:range  rdfs:Literal .
+
+<http://slor.sourceforge.net/ontology/lom.owl#structure>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-typicalLearningTime>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#typicalLearningTime> .
+
+<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-coverage>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#coverage> .
+
+<http://slor.sourceforge.net/ontology/lom.owl#learningResourceType>
+        a       owl:ObjectProperty .
+
+rdf:predicate  a            rdfs:Resource , rdf:Property ;
+        rdfs:domain         rdf:Statement ;
+        rdfs:subPropertyOf  rdf:predicate .
+
+<http://slor.sourceforge.net/ontology/lom.owl#otherPlatformRequirements>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-location>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#location> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-instalationremarks>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#installationRemarks> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-language>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#language> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-interactivityLevel>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#interativityLevel> .
+
+rdfs:subClassOf  a   rdfs:Resource , rdf:Property ;
+        rdfs:domain  rdfs:Class ;
+        rdfs:range   rdfs:Class .
+
+rdfs:Resource  a         rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Resource .
+
+rdf:rest  a                 rdfs:Resource , rdf:Property ;
+        rdfs:domain         rdf:List ;
+        rdfs:range          rdf:List ;
+        rdfs:subPropertyOf  rdf:rest .
+
+<http://slor.sourceforge.net/ontology/lom.owl#duration>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-intendedUserRole>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#intendedEndUserRole> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-typicalAgeRange>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#tipicalAgeRange> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-keyword>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#keyword> .
+
+rdf:type  a         rdfs:Resource , rdf:Property ;
+        rdfs:range  rdfs:Class .
+
+rdfs:Class  a            rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Class , rdfs:Resource .
+
+<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-interactivityType>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#interactivityType> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-size>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#size> .
+
+rdfs:Datatype  a         rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Class , rdfs:Resource , rdfs:Datatype .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-semanticDensity>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#semanticDensity> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-context>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#context> .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-purpose>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#purpose> .
+
+<http://slor.sourceforge.net/ontology/lom.owl#interativityLevel>
+        a       owl:ObjectProperty .
+
+<http://slor.sourceforge.net/ontology/lom.owl#typicalLearningTime>
+        a       owl:ObjectProperty .
+
+rdf:subject  a              rdfs:Resource , rdf:Property ;
+        rdfs:domain         rdf:Statement ;
+        rdfs:subPropertyOf  rdf:subject .
+
+<http://slor.sourceforge.net/ontology/lom.owl#tipicalAgeRange>
+        a       owl:ObjectProperty .
+
+rdfs:seeAlso  a             rdfs:Resource , rdf:Property ;
+        rdfs:subPropertyOf  rdfs:seeAlso .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-aggregationLevel>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#aggregationLevel> .
+
+rdfs:Literal  a          rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdfs:Literal , rdfs:Resource .
+
+<http://slor.sourceforge.net/ontology/lom.owl#aggregationLevel>
+        a       owl:ObjectProperty .
+
+<http://slor.sourceforge.net/ontology/lom.owl#keyword>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-duration>
+        a                       owl:ObjectProperty , owl:SymmetricProperty ;
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#duration> .
+
+<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#coverage>
+        a       owl:ObjectProperty .

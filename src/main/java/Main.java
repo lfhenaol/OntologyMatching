@@ -68,6 +68,7 @@ public class Main {
         //return lom.getTechnical().getRequirement().getOrComposite().getName().toString();
         Map response = lom.match();
         OntModel test = (OntModel) response.get("model") ;
+
         FileWriter out = null;
         try {
             // XML format - long and verbose

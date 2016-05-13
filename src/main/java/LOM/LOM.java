@@ -36,16 +36,22 @@ public class LOM extends Ontology {
         Map educational = this.educational.match(this);
         Map classification = this.classification.match(this);
 
-        this.lomModel.union(this.general.getGeneralModel());
-        this.lomModel.union(this.technical.getTechnicalModel());
-        this.lomModel.union(this.educational.getEducationalModel());
-        this.lomModel.union(this.classification.getClassificationModel());
+        //this.lomModel.union((OntModel)general.get("model"));
+//        System.out.println((OntModel)general.get("model"));
+//        this.lomModel.union((OntModel)technical.get("model"));
+//        this.lomModel.union((OntModel)educational.get("model"));
+//        this.lomModel.union((OntModel)classification.get("model"));
+        this.lomModel.add((OntModel)general.get("model"));
+        this.lomModel.add((OntModel)educational.get("model"));
+        this.lomModel.add((OntModel)technical.get("model"));
+        this.lomModel.add((OntModel)classification.get("model"));
 
         String json = "{\"lom\":[{\"general\":"+general.get("jsonObject").toString()+",\"technical\":" +
                 technical.get("jsonObject").toString()+",\"educational\":"+educational.get("jsonObject").toString()+
                 ",\"classification\":"+classification.get("jsonObject").toString()+"}]}";
 
         Map<String,Object> response = new HashMap<>();
+
         response.put("model",this.lomModel);
         response.put("jsonObject",json);
         return response;
