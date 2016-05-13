@@ -30,7 +30,7 @@ public class LOM extends Ontology {
     }
 
     public Map match(){
-       return this.general.match(this);
+       return this.classification.match(this);
     }
 
     public General getGeneral() {

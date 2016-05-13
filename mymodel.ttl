@@ -3,51 +3,23 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-coverage>
-        a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#coverage> .
-
 <http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#description>
         a                       owl:SymmetricProperty , owl:ObjectProperty ;
         owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description> .
 
-<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-structure>
+<http://slor.sourceforge.net/ontology/lom.owl#purpose>
+        a       owl:ObjectProperty .
+
+<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-purpose>
         a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#structure> .
+        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#purpose> .
 
-<http://slor.sourceforge.net/ontology/lom.owl#aggregationLevel>
-        a       owl:ObjectProperty .
-
-<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#language>
-        a       owl:ObjectProperty .
-
-<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#coverage>
+<http://slor.sourceforge.net/ontology/lom.owl#keyword>
         a       owl:ObjectProperty .
 
 <http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-keyword>
         a                       owl:SymmetricProperty , owl:ObjectProperty ;
         owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#keyword> .
 
-<http://slor.sourceforge.net/ontology/lom.owl#keyword>
-        a       owl:ObjectProperty .
-
-<http://purl.org/dc/terms/title>
-        a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title> .
-
-<http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title>
-        a       owl:ObjectProperty .
-
-<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-aggregationLevel>
-        a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://slor.sourceforge.net/ontology/lom.owl#aggregationLevel> .
-
-<http://slor.sourceforge.net/ontology/lom.owl#structure>
-        a       owl:ObjectProperty .
-
 <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description>
         a       owl:ObjectProperty .
-
-<http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-language>
-        a                       owl:SymmetricProperty , owl:ObjectProperty ;
-        owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#language> .

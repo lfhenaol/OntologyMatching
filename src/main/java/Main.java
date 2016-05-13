@@ -5,15 +5,10 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.*;
 import static spark.Spark.*;
 import LOM.LOM;
-import org.apache.jena.rdf.model.NodeIterator;
-import org.apache.jena.util.iterator.ExtendedIterator;
 import org.apache.log4j.BasicConfigurator;
 import org.json.JSONObject;
-import similarityMeasures.SimilarityMeasures;
-
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 

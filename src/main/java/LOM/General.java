@@ -48,6 +48,7 @@ public class General {
         localProp.add(this.coverage);
         localProp.add(this.structure);
         localProp.add(this.aggregationLevel);
+
         ArrayList<String> jresponse = new ArrayList<>();
         jresponse.add("title");
         jresponse.add("language");
