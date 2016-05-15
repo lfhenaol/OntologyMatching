@@ -79,15 +79,20 @@ public class Ontology {
 
         ArrayList<Resource> locProp = (ArrayList<Resource>) localProperty.clone();
 
-        for(int i=0; i < locProp.size(); i++) {
+        for(int i=locProp.size()-1; i > -1 ; i--) {
             if (localProperty.get(i).getLocalName().equals("undefined")) {
                 getSim.put(locProp.get(i),locProp.get(i));
                 locProp.remove(i);
             }
         }
 
-        Map qpDataProp = this.queryProperty(OWL.DatatypeProperty,locProp);
-        Map qpObjectProp = this.queryProperty(OWL.ObjectProperty,locProp);
+        Map qpDataProp = new HashMap<>();
+        Map qpObjectProp = new HashMap<>();
+        if(locProp.size() > 0) {
+            qpDataProp = this.queryProperty(OWL.DatatypeProperty, locProp);
+            qpObjectProp = this.queryProperty(OWL.ObjectProperty, locProp);
+        }
+
         for (int j=0;j < locProp.size();j++){
             HashMap hmOP = (HashMap) qpObjectProp.get("measure");
             HashMap hmDP = (HashMap) qpDataProp.get("measure");

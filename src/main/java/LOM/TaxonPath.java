@@ -21,7 +21,7 @@ public class TaxonPath {
     private OntModel taxonPathModel;
 
     TaxonPath(JsonNode jsonTaxonPath){
-        this.taxonPathModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.taxonPathModel = ModelFactory.createOntologyModel();
 
         this.source = this.undefinedToResource(jsonTaxonPath.getNode("source").getText());
 

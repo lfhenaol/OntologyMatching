@@ -23,7 +23,7 @@ public class OrComposite {
     private OntModel orCompositeModel;
 
     OrComposite(JsonNode jsonOrComposite){
-        this.orCompositeModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.orCompositeModel = ModelFactory.createOntologyModel();
         this.name = this.undefinedToResource(jsonOrComposite.getNode("name").getText());
         this.type = this.undefinedToResource(jsonOrComposite.getNode("type").getText());
         this.minimumVersion = this.undefinedToResource(jsonOrComposite.getNode("minimumVersion").getText());

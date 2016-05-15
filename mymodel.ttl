@@ -91,7 +91,7 @@ rdf:Property  a          rdfs:Resource , rdfs:Class ;
         a                       owl:ObjectProperty , owl:SymmetricProperty ;
         owl:equivalentProperty  <http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title> .
 
-rdf:XMLLiteral  a  rdfs:Class , rdfs:Resource , rdfs:Datatype .
+rdf:XMLLiteral  a  rdfs:Resource , rdfs:Class , rdfs:Datatype .
 
 rdf:nil  a      rdfs:Resource , rdf:List .
 

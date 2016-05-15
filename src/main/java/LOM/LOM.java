@@ -20,7 +20,7 @@ public class LOM extends Ontology {
     private OntModel lomModel;
 
     public LOM(JsonNode json, String externEndpURL, String uriGraph){
-        this.lomModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.lomModel = ModelFactory.createOntologyModel();
         this.general = new General(json.getNode("general"));
         this.technical = new Technical(json.getNode("technical"));
         this.educational = new Educational(json.getNode("educational"));
@@ -36,15 +36,10 @@ public class LOM extends Ontology {
         Map educational = this.educational.match(this);
         Map classification = this.classification.match(this);
 
-        //this.lomModel.union((OntModel)general.get("model"));
-//        System.out.println((OntModel)general.get("model"));
-//        this.lomModel.union((OntModel)technical.get("model"));
-//        this.lomModel.union((OntModel)educational.get("model"));
-//        this.lomModel.union((OntModel)classification.get("model"));
-        this.lomModel.add((OntModel)general.get("model"));
-        this.lomModel.add((OntModel)educational.get("model"));
-        this.lomModel.add((OntModel)technical.get("model"));
-        this.lomModel.add((OntModel)classification.get("model"));
+        this.lomModel.add(this.general.getGeneralModel());
+        this.lomModel.add(this.educational.getEducationalModel());
+        this.lomModel.add(this.technical.getTechnicalModel());
+        this.lomModel.add(this.classification.getClassificationModel());
 
         String json = "{\"lom\":[{\"general\":"+general.get("jsonObject").toString()+",\"technical\":" +
                 technical.get("jsonObject").toString()+",\"educational\":"+educational.get("jsonObject").toString()+

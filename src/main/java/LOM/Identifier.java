@@ -92,7 +92,7 @@ public class Identifier {
     }
 
     public OntModel getIdentifier() {
-        return identifier;
+        return this.identifier;
     }
 
     public void setIdentifier(OntModel identifier) {

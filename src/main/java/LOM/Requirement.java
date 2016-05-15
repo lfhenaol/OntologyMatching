@@ -17,7 +17,7 @@ public class Requirement {
     private OntModel requirementModel;
 
     Requirement(JsonNode jsonRequirement){
-        this.requirementModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.requirementModel = ModelFactory.createOntologyModel();
         this.orComposite = new OrComposite(jsonRequirement.getNode("orComposite"));
     }
 

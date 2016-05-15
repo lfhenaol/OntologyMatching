@@ -20,7 +20,7 @@ public class Taxon {
     private Resource entry;
     private OntModel taxonModel;
     Taxon(JsonNode jsonTaxon){
-        this.taxonModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.taxonModel = ModelFactory.createOntologyModel();
 
         this.id = undefinedToResource(jsonTaxon.getNode("id").getText());
         this.entry = undefinedToResource(jsonTaxon.getNode("entry").getText());

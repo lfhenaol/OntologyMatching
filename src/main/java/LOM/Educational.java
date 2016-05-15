@@ -30,7 +30,7 @@ public class Educational {
     private OntModel educationalModel;
 
     Educational(JsonNode jsonEducational){
-        this.educationalModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.educationalModel = ModelFactory.createOntologyModel();
         this.interactivityType = this.undefinedToResource(jsonEducational.getNode("interactivityType").getText());
         this.learningResourceType = this.undefinedToResource(jsonEducational.getNode("learningResourceType").getText());
         this.interactivityLevel = this.undefinedToResource(jsonEducational.getNode("interactivityLevel").getText());

@@ -23,7 +23,7 @@ public class Classification {
     private OntModel classificationModel;
 
     Classification(JsonNode jsonClassification){
-        this.classificationModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.classificationModel = ModelFactory.createOntologyModel();
 
         this.purpose = this.undefinedToResource(jsonClassification.getNode("purpose").getText());
         this.description = this.undefinedToResource(jsonClassification.getNode("description").getText());

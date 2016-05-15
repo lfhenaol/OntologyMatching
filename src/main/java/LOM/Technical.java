@@ -26,7 +26,7 @@ public class Technical {
     private OntModel technicalModel;
 
     Technical(JsonNode jsonTechnical){
-        this.technicalModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        this.technicalModel = ModelFactory.createOntologyModel();
 
         this.format = this.undefinedToResource(jsonTechnical.getNode("format").getText());
         this.size = this.undefinedToResource(jsonTechnical.getNode("size").getText());
