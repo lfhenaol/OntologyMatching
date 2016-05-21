@@ -30,6 +30,13 @@ public class Main {
             //JSONObject tObject = new JSONObject();
             return modelToJson(matching(json));
         });
+
+        post("/KB", (request, response) -> {
+            JdomParser JDOM_PARSER = new JdomParser();
+            JsonRootNode json = JDOM_PARSER.parse("{\"Hello\":\"world\"}");
+            //JSONObject tObject = new JSONObject();
+            return json;
+        });
         //JSONObject test = new JSONObject(modelToJson(matching(new JSONObject(request))));
         //System.out.println(json.getArrayNode("lom").get(0).getNode("general").getNode("coverage").getText());
 //        JdomParser JDOM_PARSER = new JdomParser();

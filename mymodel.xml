@@ -3,7 +3,7 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-purpose">
+  <owl:ObjectProperty rdf:about="http://www.example.com/undefined">
     <rdf:type>
       <rdfs:Resource rdf:about="http://www.w3.org/2002/07/owl#SymmetricProperty">
         <rdf:type>
@@ -20,127 +20,17 @@
         </rdf:type>
       </rdfs:Resource>
     </rdf:type>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#purpose"/>
-    </owl:equivalentProperty>
+    <owl:equivalentProperty rdf:resource="http://www.example.com/undefined"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#typicalLearningTime"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-interactivityType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#interactivityType"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#size"/>
-  <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#format"/>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#otherPlatformRequirements"/>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#installationRemarks"/>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#learningResourceType"/>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#intendedEndUserRole"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-context">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#context"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#semanticDensity"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-coverage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#coverage"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#difficulty"/>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#location"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-size">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#size"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-typicalAgeRange">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#tipicalAgeRange"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-keyword">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#keyword"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-typicalLearningTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#typicalLearningTime"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-difficulty">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#difficulty"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-location">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#location"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-aggregationLevel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#aggregationLevel"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#interativityLevel"/>
-  <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/format">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#format"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-language">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty>
-      <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#language"/>
-    </owl:equivalentProperty>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#structure"/>
-  <owl:ObjectProperty rdf:about="http://slor.sourceforge.net/ontology/lom.owl#duration"/>
-  <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-semanticDensity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#semanticDensity"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#description">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#description"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-instalationremarks">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#installationRemarks"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-learningResourceType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#learningResourceType"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-otherplatformrequeriments">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#otherPlatformRequirements"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-structure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#structure"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-duration">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#duration"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl#title"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-intendedUserRole">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#intendedEndUserRole"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jenny/ontologies/2015/10/untitled-ontology-113#has-interactivityLevel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <owl:equivalentProperty rdf:resource="http://slor.sourceforge.net/ontology/lom.owl#interativityLevel"/>
-  </owl:ObjectProperty>
+  <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">
+    <rdf:type>
+      <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+      </rdfs:Resource>
+    </rdf:type>
+  </rdfs:Resource>
   <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
     <rdf:type>
       <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
@@ -157,10 +47,26 @@
       </rdfs:Resource>
     </rdfs:range>
   </rdfs:Resource>
+  <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#domain">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdfs:Resource>
   <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#subClassOf">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdfs:Resource>
+  <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type>
+      <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+      </rdfs:Resource>
+    </rdf:type>
   </rdfs:Resource>
   <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -174,31 +80,6 @@
   <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdfs:Resource>
-  <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">
-    <rdf:type>
-      <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-      </rdfs:Resource>
-    </rdf:type>
-  </rdfs:Resource>
-  <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#domain">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  </rdfs:Resource>
-  <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type>
-      <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-      </rdfs:Resource>
-    </rdf:type>
   </rdfs:Resource>
   <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -228,17 +109,17 @@
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
   </rdfs:Resource>
-  <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
-  </rdfs:Resource>
   <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdfs:Resource>
+  <rdfs:Resource rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
   </rdfs:Resource>
   <rdfs:Resource rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
